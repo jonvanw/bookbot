@@ -10,3 +10,16 @@ def get_char_counts(text):
         else:
             dict[c] += 1
     return dict
+
+def sort_on(items):
+    return items["num"]
+
+def get_sorted_counts(char_counts):
+    unsorted = []
+    for char, count in char_counts.items():
+        unsorted.append({
+            "char": char,
+            "num": count,
+        })
+    unsorted.sort(reverse=True, key=sort_on)
+    return unsorted
